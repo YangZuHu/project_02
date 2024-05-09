@@ -9,9 +9,11 @@
 // 安装Git：https://git-scm.com/download/win
 
 // 配置用户名
+//配置一次永久生效
 "git config --global user.name "itheima""
 // 配置邮箱地址
-"git config --golbal user.email "itheima@itcast.cn""
+//配置一次永久生效
+"git config --global user.email "itheima@itcast.cn""
 // 全局配置文件
 "users/用户名文件夹/.gitconfig"
 //查看所有全局配置项
@@ -23,16 +25,20 @@
 "git help config"
 //帮助手册-终端
 "git  conf.ig -h"
+//1.是标题，1是副标题
+//1.获取仓库两种方式,1从本地将目录转化为仓库,2从服务器克隆一个
+//2.在现有目录中初始化仓库，1在要作为git仓库的文件夹内鼠标右键打开Git Bash，2通过Git Bash执行git init 命令将当前的目录转化为Git仓库,git init会创建一个名为.git的隐藏目录,没有.git在查看那打开隐藏显示
+//.git的隐藏目录里面包含初始必要文件  .git的隐藏目录被删除.git仓库就被销毁了
 
-//获取仓库两种方式,1从本地将目录转化为仓库,2从服务器克隆一个
-//通过Git Bash执行git init 命令将当前的目录转化为Git仓库,git init会创建一个名为.git的隐藏目录,里面包含初始必要文件
-
-//查看文件状态
+//3.工作区中文件的4种状态
+//四种小状态:未跟踪(Untracked) => 未被Git管理 => 已被Git管理:Git管理三种状态 - (未修改Unmodified) 
+//  Git管理三种状态，已修改modified、已暂存staged、已提交committed 
+//4.检查查看文件状态
 "git status"
-//以精简的方式显示文件状态
+//5.以精简的方式显示文件状态
 // ??index.html表示文件未跟踪(??)
-"git status -s"
 "git status --short"
+"git status -s"//--short的简写
 "??index.html"
 //跟踪文件
 //查看状态绿色A 表示已新添加到暂存区
@@ -56,7 +62,7 @@
 //13.取消暂存文件,从暂存区移除暂存文件
 "git reset HEAD index.html"
 "git reset HEAD ."
-
+//14.
 
 
 
