@@ -1,3 +1,4 @@
+
 <script>
 //  Git快照类似于备份，版本切换特别快，空间换时间 
 
@@ -35,25 +36,37 @@
 //  Git管理三种状态，已修改modified、已暂存staged、已提交committed 
 //4.检查查看文件状态
 "git status"
+
 //5.以精简的方式显示文件状态
 // ??index.html表示文件未跟踪(??)
 "git status --short"
-"git status -s"//--short的简写
-"??index.html"
-//跟踪文件
+"git status -s"//-s 是--short的简写
+??   "??index.html"//未跟踪文件  ??
+ 
+//6.跟踪新文件
 //查看状态绿色A 表示已新添加到暂存区
 //把已修改的文件放入到暂存区
-"git add index.html"
-"A index.html"
+"git add index.html"//开始跟踪一个文件
+A    "A index.html"//查看状态绿色A 表示已新添加到暂存区，文件已跟踪并处于暂存状态
 
 //快速清空终端
 "clear"
-//提交更新命令,将暂存区文件提交到Git仓库中
-"git commit -m "新建了index.html文件"" 1
-//已修改未被放到暂存区
-"M(红色) index.html"
-//已修改已放到暂存区
-"M(绿色) index.html"
+//7.提交更新命令,将暂存区文件提交到Git仓库中持久保存
+"git commit -m "新建了index.html文件"" 
+
+//8.对已提交文件进行修改
+//已修改未被放到暂存区是红色的
+M   "M(红色) index.html"
+//对已提交的文件进行修改
+//已修改已放到暂存区是绿色的
+M   "M(绿色) index.html"
+
+//9.暂存已修改文件 git add
+//1可以用它开始跟踪新文件，2把已跟踪的、且已修改的文件放到暂存区，3把有冲突文件标记为已解决状态
+"git add index.html"//把已修改文件放入到暂存区
+
+//10.提交已暂存文件
+//再次运行"git commit -m "提交消息"" 
 //撤销对文件的修改
 //11.用git仓库中保存的文件,覆盖工作区中指定的文件
 "git checkout -- index.html"
