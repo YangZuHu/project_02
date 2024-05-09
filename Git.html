@@ -52,7 +52,9 @@ A    "A index.html"//查看状态绿色A 表示已新添加到暂存区，文件
 //快速清空终端
 "clear"
 //7.提交更新命令,将暂存区文件提交到Git仓库中持久保存
-"git commit -m "新建了index.html文件"" 
+"git commit -m "message"" //[message] 可以是一些备注信息。
+//提交暂存区的指定文件到仓库区：
+"git commit [file1] [file2] ... -m [message]"
 
 //8.对已提交文件进行修改
 //已修改未被放到暂存区是红色的
@@ -66,11 +68,17 @@ M   "M(绿色) index.html"
 "git add index.html"//把已修改文件放入到暂存区
 
 //10.提交已暂存文件
-//再次运行"git commit -m "提交消息"" 
-//撤销对文件的修改
-//11.用git仓库中保存的文件,覆盖工作区中指定的文件
+//再次运行  git commit -m "提交消息" 命令，即可将暂存区中记录的index.html 的快照，提交到Git仓库中进行保存
+"git commit -m [message]" //[message] 可以是一些备注信息。
+//提交暂存区的指定文件到仓库区：
+"git commit [file1] [file2] ... -m [message]"
+
+//11.撤销对文件的修改，谨慎使用
+// ！！谨慎使用 ！！把对工作区中对应文件的修改，还原成Git仓库中所保存的版本，所有修改都会消失，无法恢复，谨慎使用
+//撤销操作的本质：用git仓库中保存的文件,覆盖工作区中指定的文件
 "git checkout -- index.html"
-//12.向暂存区一次性添加多个文件
+
+//12.向暂存区一次性添加多个文件，将新增和修改过后的文件都添加到暂存区
 "git add ."
 //13.取消暂存文件,从暂存区移除暂存文件
 "git reset HEAD index.html"
