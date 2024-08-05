@@ -54,6 +54,47 @@ Github上的 远程仓库有两种访问方式，分别是HTTPS和SSH.
 //第二次提交只需要运行
 "git push"
 
+//6.生成SSH key
+		1.打开Git Bash
+		2.运行ssh-keygen -t rsa -b 4096 -C"your_email@example.com"
+		将your_email@example.com替换为注册Github账号时填写的邮箱
+		ssh-keygen -t rsa -b 4096 -C "1711815053.qq.com"
+		3.连续敲击3次回车，即可在 C：\User\用户名文件夹\.ssh目录中生成 id_rsa 和 id_rsa.pub文件。
+		//4次回车？C:\Users\YZH\.ssh
+//7.配置SSH key
+		01.使用记事本打开id_rsa.pub文件,复制里面文本的内容
+		02.在浏览器中登录Github，点击头像->Settings->SSH and GPU Key ->New SSH key
+		03.将id_rsa.push文件中的内容，粘贴到Key对应的文本框中
+		04.在Title文本框中任意填写一个名称，来标识这个Key从何而来
+
+//8.检测Github的SSH key 是否配置成功
+		//01打开Github，输入如下的命令并回车执行
+			ssh -T git@github.com
+			输入(yes/no)
+			如果出现 Hi uername .......自己的用户名，说明 SSH key 配置成功
+			//Hi YangZuHu! You've successfully authenticated, but GitHub does not provide shell access.
+
+//9基于 SSH 将本地仓库上传到 Github
+		//01.初始化仓库
+			git init
+		//02.检查状态
+			git status -s
+		//03.将文件加入到暂存区
+			git add .
+		//04.检查文件，查看最终状态
+			git status -s
+		//05.提交到本地
+			git commit -m "初始化项目"
+		//06.关联本地仓库和远程仓库
+			git remote add origin git@github.com:YangZuHu/project_03.git
+		//07.将本地文件推送到Github上面
+			git branch -M main
+			git push -u origin main//
+//10.将远程仓库克隆到本地
+		//01打开Github，输入如下的命令并回车执行
+			git clone 远程仓库的地址//git@github.com:YangZuHu/project_03.git
+
+
 
 </script>
 <body><h1>Github学习笔记</h1></body>
